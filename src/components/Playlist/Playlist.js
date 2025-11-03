@@ -1,5 +1,5 @@
 import {useCallback} from "react";
-import ".Playlist.css";
+import "./Playlist.css";
 import TrackList from "../TrackList/TrackList";
 
 const Playlist = (props) => {
@@ -10,7 +10,14 @@ const Playlist = (props) => {
     return(
         <div className="Playlist">
             <input onChange={handleNameChange} defaultValue={"New Playlist"}/>
-            <TrackList />
+            <TrackList 
+                tracks={props.playlistTracks}
+                isRemoval={true}
+                onRemoval={props.onRemove}
+            />
+            <button className="Playlist-save" onClick={props.onSave}>
+                Save to Spotify
+            </button>
 
         </div>
     )

@@ -8,7 +8,7 @@ const Track = (props) => {
 
     const removeTrack = useCallback((e) => {
         props.onRemove(props.track)
-    }, [props.onRemove, track]);
+    }, [props.onRemove, props.track]);
 
     const renderAction = () => {
         if(props.isRemoval){
@@ -35,7 +35,7 @@ const Track = (props) => {
             </div>
             {renderAction()}
         </div>
-    )
+    );
     
 };
 
